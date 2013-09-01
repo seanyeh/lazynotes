@@ -101,6 +101,7 @@ $(document).on('ready', function(){
         if (curOsc){
             var freq = curOsc.frequency.value;
             var deltaFreq = 5 * Math.log(freq)/Math.LN10;
+            if (delta < 0){ deltaFreq *= -1; }
             curOsc.frequency.value += deltaFreq;
         }
     });
