@@ -1,0 +1,10 @@
+LazyNotes
+A music instrument for the mouse
+(Because you're too lazy to play a real instrument)
+
+Made during the Monthly Music Hackathon NYC (August 31st, 2013)
+
+- Uses the WebAudio API (so make sure your browser supports that)
+- Uses jCanvas (http://calebevans.me/projects/jcanvas/)
+
+Feel free to do whatever you want with it!
