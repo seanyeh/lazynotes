@@ -88,6 +88,13 @@ $(document).on('ready', function(){
 
     init();
 
+    $('canvas').mouseout(function(){
+        if (curOsc){
+            setMidi(curOsc, 0);
+            // Hack because midi = 0 doesn't translate to freq = 0
+            curOsc.frequency.value = 0;
+        }
+    });
     $('canvas').mousewheel(function(e, delta, deltaX, deltaY) {
         e.preventDefault();
 
