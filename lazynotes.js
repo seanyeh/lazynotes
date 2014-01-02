@@ -25,7 +25,9 @@ function createOscillator(con, midi, decay){
     osc.connect(gain);
     gain.gain.value = 0.5;
     gain.connect(COMPRESSOR);
-    osc.noteOn(0);
+
+    osc.start = osc.start || osc.noteOn;
+    osc.start && osc.start(0);
 
     osc.myMidi = midi;
 
@@ -115,7 +117,9 @@ $(document).on('ready', function(){
                 curOsc = oscillators[num];
             } else{
                 // else remove
-                oscillators[num].noteOff(0);
+                var osc = oscillators[num];
+                osc.stop = osc.stop || osc.noteOff;
+                osc.stop && osc.stop(0);
             }
             oscillators[num] = null;
         } else{
